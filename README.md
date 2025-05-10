@@ -6,7 +6,7 @@ Reqres API Testing Collection with Postman uploaded as json file to this reposit
 
 1. Overview
    
-The goal of this test plan is to verify the functionality, performance, and security of the ReqRes API. This includes verifying API responses for correctness, testing error handling, validating schema consistency, and ensuring the API functions as expected in different conditions.
+The goal of this test plan is to verify the functionality of ReqRes API. This includes verifying API responses for correctness, testing error handling, validating schema consistency, and ensuring the API functions as expected in different conditions.
 
 2. Test Objectives
    
@@ -14,11 +14,11 @@ The goal of this test plan is to verify the functionality, performance, and secu
 
   •	 Ensure the API handles invalid input and edge cases.
 
-  •  Validate that the API responses match the expected structure and format.
+  •    Validate that the API responses match the expected structure and format.
 
 3. Test Strategy
    
-We will use Postman to test the following API endpoints:
+Postman will be used to test the following API endpoints:
 
 1.	GET /api/users - Retrieve a list of users.
 2.	GET /api/users/{id} - Retrieve a single user by indicated ID.

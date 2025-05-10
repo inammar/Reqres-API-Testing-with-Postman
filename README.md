@@ -18,7 +18,7 @@ The goal of this test plan is to verify the functionality of ReqRes API. This in
 
 3. Test Strategy
    
-Postman will be used to test the following API endpoints:
+Postman is used to test the following API endpoints:
 
 1.	GET /api/users - Retrieve a list of users.
 2.	GET /api/users/{id} - Retrieve a single user by indicated ID.

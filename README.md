@@ -36,7 +36,7 @@ Postman is used to test the following API endpoints:
 14. POST /api/login - Attempt to authenticate a user (unsuccessful login).
 15. GET /api/users?delay={id} - Retrieve user data with a delay.
 
-We will create a Postman collection that contains requests for each of the endpoints and implement tests for the following scenarios.
+Postman_collection_version1 file contains all above requests as indicated in reqres.in website.
 
 
 

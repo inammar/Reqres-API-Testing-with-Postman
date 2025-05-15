@@ -36,7 +36,51 @@ The goal of this test plan is to verify the functionality of ReqRes API. This in
 14. POST /api/login - Attempt to authenticate a user (unsuccessful login).
 15. GET /api/users?delay={id} - Retrieve user data with a delay.
 
-Postman_collection_version1 file contains all above requests as indicated in reqres.in website.
+3.2. Postman_collection_version1 file contains all above requests as indicated in reqres.in website.
+
+4. Test Scenarios and Cases
+   
+4.1 Functional Tests
+
+•	Test Case 1: GET /api/users
+
+o	Objective: Verify that the API correctly returns a list of users.
+
+o	Test Steps:
+
+1.	Send a GET request to /api/users.
+   
+2.	Check that the response status code is 200 OK.
+   
+3.	Verify that the response contains a list of users (e.g., an array of user objects).
+   
+4.	Validate the response body to ensure it contains the following attributes: id, email, first_name, last_name, avatar.
+
+•	Test Case 2: GET /api/users/{id}
+
+o	Objective: Verify that the API returns the correct user when querying by a valid id.
+
+o	Test Steps:
+
+1.	Send a GET request to /api/users/{id} with an existing user ID (e.g., GET /api/users/2).
+   
+2.	Check that the response status code is 200 OK.
+   
+3.	Validate that the response contains user data with the required attributes (id, email, first_name, etc.).
+
+•	Test Case 3: POST /api/users
+
+o	Objective: Verify that the API creates a new user.
+
+o	Test Steps:
+
+1.	Send a POST request to /api/users with valid data in the request body (e.g., { "name": "John", "job": "Developer" }).
+   
+2.	Verify the response status code is 201 Created.
+   
+3.	Check that the response contains the name and job fields, and their values are correct.
+
+
 
 
 

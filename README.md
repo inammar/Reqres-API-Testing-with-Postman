@@ -1,6 +1,6 @@
 ## Reqres-API-Testing-with-Postman
 
-Reqres API Testing Collection with Postman uploaded as json file to this repository.
+Reqres API Testing Collection with Postman uploaded as json file to this repository as version 1 and version 2 files.
 
 ### Test Plan
 
@@ -18,7 +18,7 @@ The goal of this test plan is to verify the functionality of ReqRes API. This in
 
 3. Test Strategy
    
-Postman is used to test the following API endpoints:
+3.1. Postman is used to test the following API endpoints:
 
 1.	GET /api/users - Retrieve a list of users.
 2.	GET /api/users/{id} - Retrieve a single user by indicated ID.

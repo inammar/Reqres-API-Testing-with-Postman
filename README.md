@@ -56,6 +56,27 @@ o	Test Steps:
    
 4.	Validate the response body to ensure it contains the following attributes: id, email, first_name, last_name, avatar.
 
+   Tests in Postman:
+
+        //assertion test to verify response status
+        pm.test("Status code is 200", function () {
+            pm.response.to.have.status(200);
+        });
+        //checks that the response has a data field and that it's an array, to confirm the API returns a list of users in the correct format
+        pm.test("Response is an array", function () {
+            pm.response.to.have.jsonBody('data');
+            pm.expect(pm.response.json().data).to.be.an('array');
+        });
+        //checks that the first user in the response has all expected attributes (id, email, first_name, last_name, and avatar), to ensure each user object includes the required fields.
+        pm.test("User attributes are present", function () {
+            var jsonData = pm.response.json();
+            pm.expect(jsonData.data[0]).to.have.property('id');
+            pm.expect(jsonData.data[0]).to.have.property('email');
+            pm.expect(jsonData.data[0]).to.have.property('first_name');
+            pm.expect(jsonData.data[0]).to.have.property('last_name');
+            pm.expect(jsonData.data[0]).to.have.property('avatar');
+        });
+
 •	Test Case 2: GET /api/users/{id}
 
 o	Objective: Verify that the API returns the correct user when querying by a valid id.
@@ -67,6 +88,20 @@ o	Test Steps:
 2.	Check that the response status code is 200 OK.
    
 3.	Validate that the response contains user data with the required attributes (id, email, first_name, etc.).
+
+   Tests in Postman:
+
+        //assertion test to verify response status
+        pm.test("Status code is 200", function () {
+            pm.response.to.have.status(200);
+        });
+        //checks that the response has a data object and that this object contains id and email fields, confirming user details are returned—typically used when requesting a single user
+        pm.test("User data is returned", function () {
+            var jsonData = pm.response.json();
+            pm.expect(jsonData).to.have.property('data');
+            pm.expect(jsonData.data).to.have.property('id');
+            pm.expect(jsonData.data).to.have.property('email');
+        });
 
 •	Test Case 3: POST /api/users
 
@@ -80,7 +115,7 @@ o	Test Steps:
    
 3.	Check that the response contains the name and job fields, and their values are correct.
 
-
+Other test steps and Postman tests will be added later.
 
 
 

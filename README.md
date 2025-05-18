@@ -103,17 +103,41 @@ o	Test Steps:
             pm.expect(jsonData.data).to.have.property('email');
         });
 
-•	Test Case 3: POST /api/users
+•	Test Case 3: GET /api/users/{id}
 
-o	Objective: Verify that the API creates a new user.
+o	Objective: Verify that the API does not return user with indicated ID.
 
 o	Test Steps:
 
-1.	Send a POST request to /api/users with valid data in the request body (e.g., { "name": "John", "job": "Developer" }).
+1.	Send a GET request to /api/users/{id} with a non existing user ID (e.g., GET /api/users/23).
    
-2.	Verify the response status code is 201 Created.
+2.	Verify the response status code is 404 Not Found.
    
-3.	Check that the response contains the name and job fields, and their values are correct.
+ Tests in Postman:
+
+        //assertion test to verify response status
+        pm.test("Status code is 404", function () {
+            pm.response.to.have.status(404);
+        });
+
+•	Test Case 4: GET /api/unknown
+
+o	Objective: Verify that the API correctly returns a list of all available color resources.
+
+o	Test Steps:
+
+1.	Send a GET request to /api/unknown.
+   
+2.	Check that the response status code is 200 OK.
+
+   Tests in Postman:
+
+        //assertion test to verify response status
+        pm.test("Status code is 200", function () {
+            pm.response.to.have.status(200);
+        });
+
+
 
 Other test steps and Postman tests will be added later.
 

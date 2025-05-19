@@ -137,6 +137,22 @@ o	Test Steps:
             pm.response.to.have.status(200);
         });
 
+•	Test Case 5: GET /api/unknown/{id}
+
+o	Objective: Verify that the API correctly returns the color resource of indicated ID.
+
+o	Test Steps:
+
+1.	Send a GET request to /api/unknown/{id} with an existing user ID (e.g., GET /api/unknown/2).
+   
+2.	Check that the response status code is 200 OK.
+
+   Tests in Postman:
+
+        //assertion test to verify response status
+        pm.test("Status code is 200", function () {
+            pm.response.to.have.status(200);
+        });
 
 
 Other test steps and Postman tests will be added later.

@@ -154,6 +154,49 @@ o	Test Steps:
             pm.response.to.have.status(200);
         });
 
+•	Test Case 6: GET /api/unknown/{id}
+
+o	Objective: Verify that the API does not return color resource with indicated ID.
+
+o	Test Steps:
+
+1.	Send a GET request to /api/unknown/{id} with a non existing user ID (e.g., GET /api/unknown/23).
+   
+2.	Verify the response status code is 404 Not Found.
+   
+ Tests in Postman:
+
+        //assertion test to verify response status
+        pm.test("Status code is 404", function () {
+            pm.response.to.have.status(404);
+        });
+
+•	Test Case 7: POST /api/users
+
+o	Objective: Verify that the API creates a new user.
+
+o	Test Steps:
+
+1.	Send a POST request to /api/users with valid data in the request body (e.g., { "name": "morpheus", "job": "leader" }).
+   
+2.	Verify the response status code is 201 or 202 Created.
+   
+3.	Check that the response contains the name and job fields, and their values are correct.
+
+  Tests in Postman:
+
+        //assertion test to verify response status
+        pm.test("Successful POST request", function () {
+            pm.expect(pm.response.code).to.be.oneOf([201, 202]);
+        });
+        //checks that the response includes name and job fields with specific values ('morpheus' and 'leader'), to confirm the API correctly 
+        returned or accepted user details—often used after a POST or PUT request
+        pm.test("Response contains user details", function () {
+            var jsonData = pm.response.json();
+            pm.expect(jsonData).to.have.property('name', 'morpheus');
+            pm.expect(jsonData).to.have.property('job', 'leader');
+        });
+
 
 Other test steps and Postman tests will be added later.
 

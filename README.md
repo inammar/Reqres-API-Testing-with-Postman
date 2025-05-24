@@ -197,6 +197,31 @@ o	Test Steps:
             pm.expect(jsonData).to.have.property('job', 'leader');
         });
 
+•	Test Case 8: PUT /api/users/{id}
+
+o	Objective: Verify that the API updates an existing user.
+
+o	Test Steps:
+
+1. Send a PUT request to /api/users/{id} with valid updated data in the request body (e.g., { "name": "morpheus", "job": "zion resident" }).
+
+2. Verify the response status code is 200 OK.
+
+3. Check that the response contains the updated name and job fields with their expected values.
+
+  Tests in Postman:
+
+       //assertion test to verify response status
+       pm.test('Status code is 200', function () {
+           pm.response.to.have.status(200);
+       });
+       //checks that the response includes name and job fields with specific values ('morpheus' and 'zion resident'), to confirm the API 
+       correctly returned or accepted user details—often used after a POST or PUT request
+       pm.test("Response contains updated user details", function () {
+           var jsonData = pm.response.json();
+           pm.expect(jsonData).to.have.property('name', 'morpheus');
+           pm.expect(jsonData).to.have.property('job', 'zion resident');
+       });
 
 Other test steps and Postman tests will be added later.
 

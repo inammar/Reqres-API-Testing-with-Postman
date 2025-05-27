@@ -223,6 +223,24 @@ o	Test Steps:
            pm.expect(jsonData).to.have.property('job', 'zion resident');
        });
 
+•	Test Case 9: PATCH /api/users/{id}
+
+o	Objective: Verify that the API correctly updates the user resource when sending a PATCH request to /api/users/{id} with valid data.
+
+o	Test Steps:
+
+1. Send a PATCH request to /api/users/{id} with an existing user ID (e.g., /api/users/2) and a valid request body.
+
+2. Check that the response status code is 200 OK.
+
+  Tests in Postman:
+
+       //assertion test to verify response status
+       pm.test('Status code is 200', function () {
+           pm.response.to.have.status(200);
+       });
+
+
 Other test steps and Postman tests will be added later.
 
 

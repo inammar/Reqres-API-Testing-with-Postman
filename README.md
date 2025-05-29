@@ -240,6 +240,25 @@ o	Test Steps:
            pm.response.to.have.status(200);
        });
 
+•	Test Case 10: DELETE /api/users/{id}
+
+o	Objective: Verify that the API deletes user with indicated ID.
+
+o	Test Steps:
+
+1.	Send a DELETE request to /api/users/{id} with a existing user ID (e.g., GET /api/users/2).
+   
+2.	Verify the response status code is 204 No Content.
+   
+ Tests in Postman:
+
+        //assertion test to verify response status
+        pm.test("Status code is 204", function () {
+            pm.response.to.have.status(204);
+        });
+
+
+
 
 Other test steps and Postman tests will be added later.
 

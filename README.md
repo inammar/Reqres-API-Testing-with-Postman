@@ -246,7 +246,7 @@ o	Objective: Verify that the API deletes user with indicated ID.
 
 o	Test Steps:
 
-1.	Send a DELETE request to /api/users/{id} with a existing user ID (e.g., GET /api/users/2).
+1.	Send a DELETE request to /api/users/{id} with a existing user ID (e.g., DELETE /api/users/2).
    
 2.	Verify the response status code is 204 No Content.
    
@@ -257,7 +257,22 @@ o	Test Steps:
             pm.response.to.have.status(204);
         });
 
+•	Test Case 11: POST /api/register
 
+o	Objective: Verify that the API successfully registers a user with valid credentials.
+
+o	Test Steps:
+
+1.	Send a POST request to /api/register with a valid data (e.g. { "email": "eve.holt@reqres.in", "password": "pistol" }).
+   
+2.	Verify the response status code is 200 OK.
+   
+ Tests in Postman:
+
+        //assertion test to verify response status
+        pm.test("Status code is 200", function () {
+            pm.response.to.have.status(200);
+        });
 
 
 Other test steps and Postman tests will be added later.

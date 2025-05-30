@@ -274,7 +274,24 @@ o	Test Steps:
             pm.response.to.have.status(200);
         });
 
+•	Test Case 12: POST /api/register
 
+o	Objective: Verify that the API does not register a user with invalid credentials.
+
+o	Test Steps:
+
+1.	Send a POST request to /api/register with invalid data (e.g. { "email": "sydney@fife" }).
+   
+2.	Verify the response status code is 400 Bad Request and has indicated "error": "Missing password".
+   
+ Tests in Postman:
+
+        //assertion test to verify response status
+        pm.test("Status code is 400", function () {
+            pm.response.to.have.status(400);
+        });
+
+        
 Other test steps and Postman tests will be added later.
 
 

@@ -291,6 +291,39 @@ o	Test Steps:
             pm.response.to.have.status(400);
         });
 
+• Test Case 13: POST /api/login
+
+o Objective: Verify that the API successfully logs in a user with valid credentials.
+
+o Test Steps:
+
+1. Send a POST request to /api/login with a valid data (e.g. { "email": "eve.holt@reqres.in", "password": "cityslicka" }).
+
+2. Verify the response status code is 200 OK.
+
+Tests in Postman:
+
+    //assertion test to verify response status
+    pm.test("Status code is 200", function () {
+        pm.response.to.have.status(200);
+    });
+
+• Test Case 14: POST /api/login
+
+o Objective: Verify that the API does not log in a user with invalid credentials.
+
+o Test Steps:
+
+1. Send a POST request to /api/login with a invalid data (e.g. { "email": "peter@klaven" }).
+
+2. Verify the response status code is 400 Bad Request and contains error: "Missing password".
+
+Tests in Postman:
+
+    //assertion test to verify response status
+    pm.test("Status code is 400", function () {
+        pm.response.to.have.status(400);
+    });
         
 Other test steps and Postman tests will be added later.
 

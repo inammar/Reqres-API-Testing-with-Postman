@@ -325,7 +325,27 @@ Tests in Postman:
         pm.response.to.have.status(400);
     });
         
-Other test steps and Postman tests will be added later.
+
+• Test Case 15: GET /api/users?delay={id}
+
+o Objective: Verify that the API correctly handles delayed responses based on the {id} parameter.
+
+o Test Steps:
+
+1. Send a GET request to /api/users?delay={id} with a valid {id} value (e.g., /api/users?delay=3).
+
+2. Verify the response status code is 200 OK.
+
+Tests in Postman:
+
+    //assertion test to verify response status
+    pm.test("Status code is 200", function () {
+        pm.response.to.have.status(200);
+    });
+    //assertion test to verify response time
+    pm.test('Response time is less than 6000ms', function () {
+        pm.expect(pm.response.responseTime).to.be.below(6000);
+    });
 
 
 

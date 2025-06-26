@@ -347,6 +347,6 @@ Tests in Postman:
         pm.expect(pm.response.responseTime).to.be.below(6000);
     });
 
-
+4.2. Postman_collection_version2 file contains all above requests with objectives, tests steps and assertion scripts. 
 
 

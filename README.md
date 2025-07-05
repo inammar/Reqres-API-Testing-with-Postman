@@ -42,7 +42,7 @@ The goal of this test plan is to verify the functionality of ReqRes API. This in
    
 4.1 Functional Tests
 
-•	Test Case 1: GET /api/users
+#### •	Test Case 1: GET /api/users
 
 o	Objective: Verify that the API correctly returns a list of users.
 
@@ -77,7 +77,7 @@ o	Test Steps:
             pm.expect(jsonData.data[0]).to.have.property('avatar');
         });
 
-•	Test Case 2: GET /api/users/{id}
+#### •	Test Case 2: GET /api/users/{id}
 
 o	Objective: Verify that the API returns the correct user when querying by a valid id.
 
@@ -103,7 +103,7 @@ o	Test Steps:
             pm.expect(jsonData.data).to.have.property('email');
         });
 
-•	Test Case 3: GET /api/users/{id}
+#### •	Test Case 3: GET /api/users/{id}
 
 o	Objective: Verify that the API does not return user with indicated ID.
 
@@ -120,7 +120,7 @@ o	Test Steps:
             pm.response.to.have.status(404);
         });
 
-•	Test Case 4: GET /api/unknown
+#### •	Test Case 4: GET /api/unknown
 
 o	Objective: Verify that the API correctly returns a list of all available color resources.
 
@@ -137,7 +137,7 @@ o	Test Steps:
             pm.response.to.have.status(200);
         });
 
-•	Test Case 5: GET /api/unknown/{id}
+#### •	Test Case 5: GET /api/unknown/{id}
 
 o	Objective: Verify that the API correctly returns the color resource of indicated ID.
 
@@ -154,7 +154,7 @@ o	Test Steps:
             pm.response.to.have.status(200);
         });
 
-•	Test Case 6: GET /api/unknown/{id}
+#### •	Test Case 6: GET /api/unknown/{id}
 
 o	Objective: Verify that the API does not return color resource with indicated ID.
 
@@ -171,7 +171,7 @@ o	Test Steps:
             pm.response.to.have.status(404);
         });
 
-•	Test Case 7: POST /api/users
+#### •	Test Case 7: POST /api/users
 
 o	Objective: Verify that the API creates a new user.
 
@@ -197,7 +197,7 @@ o	Test Steps:
             pm.expect(jsonData).to.have.property('job', 'leader');
         });
 
-•	Test Case 8: PUT /api/users/{id}
+#### •	Test Case 8: PUT /api/users/{id}
 
 o	Objective: Verify that the API updates an existing user.
 
@@ -223,7 +223,7 @@ o	Test Steps:
            pm.expect(jsonData).to.have.property('job', 'zion resident');
        });
 
-•	Test Case 9: PATCH /api/users/{id}
+#### •	Test Case 9: PATCH /api/users/{id}
 
 o	Objective: Verify that the API correctly updates the user resource when sending a PATCH request to /api/users/{id} with valid data.
 
@@ -240,7 +240,7 @@ o	Test Steps:
            pm.response.to.have.status(200);
        });
 
-•	Test Case 10: DELETE /api/users/{id}
+#### •	Test Case 10: DELETE /api/users/{id}
 
 o	Objective: Verify that the API deletes user with indicated ID.
 
@@ -257,7 +257,7 @@ o	Test Steps:
             pm.response.to.have.status(204);
         });
 
-•	Test Case 11: POST /api/register
+#### •	Test Case 11: POST /api/register
 
 o	Objective: Verify that the API successfully registers a user with valid credentials.
 
@@ -274,7 +274,7 @@ o	Test Steps:
             pm.response.to.have.status(200);
         });
 
-•	Test Case 12: POST /api/register
+#### •	Test Case 12: POST /api/register
 
 o	Objective: Verify that the API does not register a user with invalid credentials.
 
@@ -291,7 +291,7 @@ o	Test Steps:
             pm.response.to.have.status(400);
         });
 
-• Test Case 13: POST /api/login
+#### • Test Case 13: POST /api/login
 
 o Objective: Verify that the API successfully logs in a user with valid credentials.
 
@@ -308,7 +308,7 @@ Tests in Postman:
         pm.response.to.have.status(200);
     });
 
-• Test Case 14: POST /api/login
+#### • Test Case 14: POST /api/login
 
 o Objective: Verify that the API does not log in a user with invalid credentials.
 
@@ -325,8 +325,7 @@ Tests in Postman:
         pm.response.to.have.status(400);
     });
         
-
-• Test Case 15: GET /api/users?delay={id}
+#### • Test Case 15: GET /api/users?delay={id}
 
 o Objective: Verify that the API correctly handles delayed responses based on the {id} parameter.
 
